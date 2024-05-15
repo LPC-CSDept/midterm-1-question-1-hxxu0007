@@ -99,3 +99,18 @@ def test_main_4():
     # res = re.search(regex_string, main.evenlist)
     # assert res != None
     # print(res.group())
+
+
+def test_main_5():
+    captureOut = io.StringIO()
+    sys.stdout = captureOut
+    datastr = '1\n3\n4\n7\n9\n1\n3\n4\n7\n9'
+    sys.stdin = io.StringIO(datastr)
+
+    evencnt = main.main()
+    sys.stdout = sys.__stdout__
+    print('Captured ', captureOut.getvalue())
+    lines = captureOut.getvalue().split('\n')
+    print(lines)
+    print(f'Your output is {evencnt}')
+    assert evencnt == 0
