@@ -6,6 +6,8 @@ def main():
 
     for i in range(10):
         number.append(int(input('Enter a number: ')))
+        if(number[i] % 2 == 0):
+            evencnt += 1
 
     """
     ########################################
